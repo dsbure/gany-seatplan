@@ -11,11 +11,11 @@
 	<body>
 		<div class="container">
 			<div class="gform">
-				<iframe src="https://docs.google.com/forms/d/e/	1FAIpQLSc6dLqORg-9NApAo3-vxWIMvclagRnhpRv8AAQUF_xqcuz_6g/viewform?embedded=true" width="480" height="915" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+				<iframe src="https://docs.google.com/forms/d/e/	1FAIpQLSc6dLqORg-9NApAo3-vxWIMvclagRnhpRv8AAQUF_xqcuz_6g/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 			</div>
 
 			<div class="seatplan">
-				<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTGvD7l3HNJJ-IvO87vsF7sww4C7Mc0nLPqQBT1QqlQRbvqsdjpXQPwfhyUuHzjsniA2xhQah5TwgAp/pubhtml?gid=576732453&amp;widget=true&amp;single=true&amp;headers=false" height="915" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+				<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTGvD7l3HNJJ-IvO87vsF7sww4C7Mc0nLPqQBT1QqlQRbvqsdjpXQPwfhyUuHzjsniA2xhQah5TwgAp/pubhtml?gid=576732453&amp;widget=true&amp;single=true&amp;headers=false" height="895" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 			</div>
 		</div>
 	</body>
@@ -33,6 +33,8 @@
 		.gform iframe {
 			border-radius: 8px;
 			filter: drop-shadow(0px 2px 4px #0004);
+			height: 915px;
+			width: 480px;
 		}
 		.seatplan iframe {
 			border-radius: 8px;
@@ -48,12 +50,14 @@
 			display: flex;
 			flex-direction: row;
 			flex-wrap: nowrap;
-			align-content: center;
-			padding: 24px;
-			padding-left: 0px;
-			border-radius: 32px;
+			align-items: center;
+			padding: 16px;
+			padding-left: 4px;
+			padding-right: 24px;
+			border-radius: 24px;
 			overflow: overlay;
 			height: fit-content;
+			max-height: calc(100% - 32px);
 		}
 		body {
 			display: flex;
@@ -77,12 +81,30 @@
 				margin: 0px !important;
 				height: 100%;
 			}
-			html {
+			.container {
+				background-color: #f08c8c;
+				max-height: 100%;
+				gap: 16px;
+			}
+			.gform, .seatplan {
 				background-color: #f2beb9;
+				width: fit-content;
+				margin-inline: auto;
+				border-radius: 16px;
+			}
+			.gform {
+				padding-top: 8px;
+			}
+			.gform iframe {
+				max-width: 100vw;
+			}
+			iframe {
+				border-radius: 16px;
 			}
 		}
-		@media (max-height: 967px) {
-			body {
+
+		@media (max-height: 931px) {
+			.container {
 				align-items: start;
 			}
 		}
